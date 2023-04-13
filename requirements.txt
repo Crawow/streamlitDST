@@ -6,3 +6,7 @@ pandas
 plotly
 streamlit
 matplotlib==3.5.2
+bokeh
+sklearn
+seaborn
+PIL
