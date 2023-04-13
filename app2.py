@@ -6,14 +6,14 @@ import plotly.express as px
 from bokeh.layouts import row
 from bokeh.models import Range1d, LabelSet
 from bokeh.plotting import figure, output_notebook, show, curdoc
-from bokeh.models.widgets import Tabs
+
 from bokeh.models import ColumnDataSource
 from bokeh.models.tools import HoverTool
 from bokeh.models import BoxAnnotation
 from bokeh.layouts import row
 from bokeh.models import Range1d, LabelSet
 from bokeh.plotting import figure, output_notebook, show,curdoc
-from bokeh.models.widgets import Tab
+
 from bokeh.models import ColumnDataSource
 from bokeh.models.tools import HoverTool
 from bokeh.palettes import inferno
@@ -87,7 +87,10 @@ selected = option_menu(
 
 if selected == "Projet":
     st.title("La Data Science sera t elle le \"cheat code\" de la vente d'un jeu vidéo ?")
-    st.markdown("Estimer les ventes d'un produit avant son lancement peut être une véritable force pour la rentabilité d'une entreprise. Dans le cadre de ce projet nous allons essayer de déployer un modèle qui permettra de prédire les ventes d'un jeu.")
+    st.markdown("Estimer les ventes d'un produit avant son lancement peut être une véri
+                
+                
+                le force pour la rentabilité d'une entreprise. Dans le cadre de ce projet nous allons essayer de déployer un modèle qui permettra de prédire les ventes d'un jeu.")
     
     image = 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBQSFRUVFRYYGBgaGRwYGBgYGRgaGBgYGBwZGRgYGRgcIS4lHB4rIRgaJjgnKy8xNTU1GiQ7QDs0Py41NTEBDAwMEA8QHhISHjQnJSs0NDU1NDQ3NDYxNTE0NDQ0NDQ0NTQ3PzQ0NDQ0MTQxNDE0NDE0NDE0NDQxMTQ0NDExNP/AABEIALcBEwMBIgACEQEDEQH/xAAcAAABBAMBAAAAAAAAAAAAAAAABAUGBwECAwj/xABNEAACAQIDAwcHBwkECgMAAAABAgADEQQSIQUGMQcTIkFRYXEycoGRobHBFEJSkrLC0RUjMzRTc4Ki8ENiY7MWJCU1RIOTo9LhVGTi/8QAGgEBAAMBAQEAAAAAAAAAAAAAAAECAwQGBf/EACkRAQEAAgECBQQDAAMAAAAAAAABAhEDITEEEjJBcRNRkcEiQmEFFIH/2gAMAwEAAhEDEQA/AKcpoWNgCT2AXipNmVjboFb/AEiF9jEGSJL26J06rXA9GVv67IItuAHH5treoKLnw9cnQZU2O3EsLdqgsL9hY2UekxQmyUAuSzaX6gPX5P8ANHJV4EjWx1N831mzEfXmxXr7uP8A+jeNINFXZC8QxHDystte9io9RMT1NjuOBU9gOZWPgGAkgK2v26dx6uu4v65oEtewt0tbAi/iFy39Ib8WhGnwNUa5GI4XXpC446rcRMRaS/Jqp6wSAdL+ggX9RWZagWADAWsQM4Fr+L318QY0lDoSUVdnUDxCjT5ua9/AWU+i0UbM3LOMD8xUClMtxV0DZr8CoNuHYeMaEPhJLjtx8fSueZLgddMh7+CjpeyMGIwz0zldGQ9jKVPqMgcYQhAIQhAIQhAIR/2DsP5XRxbJmNWiiVEUWsy5iKgItcm1iLdltbxggEIQgEIR6/JIXBnEvmDNVWnSGgUrldnc6XOqgC1uB4wGWEIQCEIQCEIQCEkGzd0sXiACqZVOoZzluO0DVreiSTB8m/7SqT3IoHta/ulbnjPdeceV9leTpRou5sqsx7ACT6hLdwe42Fp2vTzHtck+zh7JIMJspKYsiKo7FUAeoTO809o0nDfeqXTdnGEX5h/SQPYTCXn8mWEj6tX+hj96ocNbUaTsmMdbWY6dtj74lvC86HKcU2kwFiqkd2n4zvS2ghtxGlrHUD+vCM95sh1HiPfAfGrpr5RvbTRR6Dc6egTDYrsUenXh7PZHWhsVTgXxRfg2QAHUPnAVCvzgUzMToRdOILWYxJQ6mu5+cR4ae6azUTYQMyweS3CCoMTrYjm7aX455X0nfJbtilRq1KDnK1bJzZNspZM3Q845tO21uNrhPK2zXUEggj1GMuJr03BVlDg9TKCp49TePZJjX8lvNPukKNBRSV79Mta3UVsb6dVrD60CI717CwhoVqiYdKbohZSmZbEf3VIU+qVTLm3o/VMR+7aUzKpEIQgEIQgTrklxGTF1B9LDv61KMPcY919m7Oxleo2GW7f2q5bUw1yM1MMOJIa9tNBaRHk7qkY6kB85aqH+Kk9vbaPHJnigj183Wiewn8eHVLzrEU7/AOidL9mn1RMf6J0v2a/VEln5QTtEPygnaI1BCdo7BwVBUfEKVQMAcgsWNmsrFdcumttdIj37xSthcMEy5GdmUKLDKiqFsOoWfhHXlHxqthkVSP0q+xXkP3jf/Vtnp180727mfKPseyTZqIiNwhCZrCEIoweEes4SmpdmNgqi5P4eMBPLK3F3FaoVr4hLLxSmw49jMOzsB9Mf9xuT9cPatiMrVeKjitPw+k3f1dXaZ8+Kp0hqRMs8/aN8OP3pMuzwJ0SgojZjNuk6It/YImSrWqHU5R3fjMdx0avueWyDQanu6pwKziKTgaTthlY8ZGzWmLQizmBCTpXzPNl4Xmt4XnY4m15mmekviPfNLzamekviPfAdZsJrNhJQyJtNRNoGZwxLlSpBII1BBsQRqCCNbztE+K6vT/V+qKL33R258twS1GPTUMlTz0HlW6swKt/FGESP8keOK1MTQv0Xpc4B1ZqZynxJDj6okhEgNG9X6piPMPvEpqXHvb+p4jzPvCU5ISIQhAIQhAfNyq3N4/CN/jIp8GYKffN8A5w1asgPklk+qxGvfpG7YtXJiKDfRq029TqY87xUcmPxi9XPVD45nzD2H2y+KKV/lVu2H5VbtjReYvA7baxrVFUE/Ovrw4Gbb3LlGBXswVL+Zqj/AHo3Y49ER55RUyYpU+hh6Ceqmp+MZdoRFZtaay0OS/Z1GulTnaaPlC2zqGtcve1/AeqZZZeWbbcXHM97utTasLSwuSuvTpnEMwGboWJ+ic9wOzUD2SyP9H8J/wDGpfUX8Jj8hYUf8PS+on4TLLl3NaXxxxl3u/h1w22RVDBATl0JtoCe/rhTwAqNma5I7fgOqKNnph8Mr9BKaeWSAFXgAS1uGgGvdOv5Ww5Jyuhy8QhzEX4Xy3twmfSzrXRLNbkchs5Q2g0ipEUESJbyb3vTdaVBOm4vnfgBe3kDUn0iGAFUUGqVnZ3INyeHHgqjQDwkbkX8ts3U2BWahBeVxVVmV6i6ZywA7uA9OntjBvXtvFYbmVpV6iXBBAYnyco6/GThfNdM88fLjaujSE83NvTjj/xVb/qN+MxN/JXN9SEd4Xmt4XmrFteb0j0l8R75yvN6XlL4j3wHgTaaibCShmZms2gZibF9Xp/q0URNi+r0xRIOTqoVx9MD5yVlPhzTvx8UEngkM5L8KXxjPbSnRqMT2FgEHhfM3qMmgkBl3v8A1PEeYPtLKclxb4/qWI80fbWU7ISIQhAIQhA2RiCCOINx4iTDfpQNpYg/SyMP4qVNyf675DZOd/7fK6Ldb4Wk1/4XX7oloio/CYhJGopZ6lFOtnC/WZR8Y78qH+8q47FpD/tU4m2FR5zGYRe2shH8LKWHqEWcqyW2piO8Uz/2kHwkZEQ+WjyY1GSjXZbXtT1IuFBdgzEddgSfRKultcj9MstYA2OVbG17HM3VMeX0urw/bP4/cSRNpYglOiDcgKMpHOgkgupvoAAG0vo077MxdSo9nItlLaLazdDMnit7enWNm8m9a4CotOqzFmQOCiAixJFtX46RkPKRQ7an1F/8pz6ys6Reyf5+U22nXNOk7gBiqkgHh6e7rPcDGDd7Fs7VKbonRKsDTQIOnmvmW/8Ad498ZW5RaB/afVT8Y5bq7bo4pnSgDTyjORkRQbm1+j1yLjlJuxfG4zC46lt99km9danQxWHeocqhDckE65j2RxbevArSYc+p4nKLk37ALdsifKPVLigzcShvbudhK/mvHxzLHanLy5Y6k+yy15QMMuVBQqFVHG6gk9trmwvrxkP3n218sqh1UoijKqk3PaST2n4RkhNphjj1jmy5Mspq0QhCWUKYTEJIzN6XlL4j3znN6PlL5w98B6mRMTIkoZmZiEDMTYs8PA/1fqimWHyXbFw9YVMRUph3puFQtchOiGzBeGa/Xa46ooduTrd1sHhalSouWpWGYqRYoiqcikHUHpMx84DqnMSc4nyH81vcZBhIDJvn+pYjzV+2sp2XFvn+pYjzV+2kp2QkQhCAQhCASfb9C67MqW8vCIt/N1+/IDLD3yQ/IdjuB/ZlSfFaBH2WloiopCEJIe9xaRfaeEFtMzN4ZUcn4TtywU8u0nP0qdM/yAfCKuS2lm2mh+jTdh3cFP2pty3U7Y+mfpYdD6nqr8IvYV1Lf5Fv7XzV+00qCW/yK/2vmj7RmPJ2dXh+2fx+4j3K3Vz4qkwFr0bdXU9QdXhIFJ1yqj/WKOlvzR7eqrV7ZBZOHpY8nq/DEn/JKfz1f92PtCQCTDk9qsjYgqcp5sa+Bv8ACRyTeNTx+r8l3KD5FDzW/wAxpAZP+UH9HQ8Kn+Y0gErw+lp4j+vwIQhNXOIQhAUQmIQMzaj5S+cPeJpNqPlL5w94gPHOdILbit7+Btb2zqIlP6UeafeIplkMzMxMwMy1eSP9XxH74fYWVWoJIABJPADUnwEs7k0xSYfD1xWbI3PeS4Ia2RNcvG3fAn+J8h/Nb3GQYRdt7ewZHTD2zMCA7i6r22T5xtfiV6uMiA2y6svFgLBhYXbTUiw0PXA676n/AFKv4L9tJT0t3fKqHwFVlNwQhB7i6SopFSIQhIBCEIBLL3oUnY+zmHEMi+hqb3+xK0lqbap59gYcj5ppH+aon35MEDhCEshOeR2jfHVn+jRsO7Myj7sUcu9Cz4N+1aiX81lYa/xmdeROl+exjf3aY9Ze49kc+XPD3wmHqW8ivl8BURj70Eewo6W/yK/2nm/elQS3uRU6v5v3hMeT0unw/wDb4/cR7lZ/T0OH6NuH72pIGZZHLNTtiKFhpzbcB/fY/GVzlPYZON6M85dtJNeTTDirVroSRene47mH4yG5D2eyTrknQ/Kaun9kftLI5L/Gp4pfN2+7pygi1Oj/AMz2VWlfSw+UIfmqXjW/zTK8leH0r+I/r8CEITVziEIQO0JiEDM2o+UvnD3iaTej5S+cPeIDmf0o8w++KYmP6QeYffFMshkGcWxigkWOnYeuFaplEaabXYnvkbSnG6iuTdVu50Hb6+oR32gXVyHYEg2IDKwU9nRNlPdIlQxr0qYZSRrrbsijZe1ErGoXXmyDmQUlCprZQpA4cOJ46njJQlKbWVcPUpMl3YjI4NsvSDMGHzuAserwvdir1B9IqSMyMvHMBmWxvoTbTvsOucWrEdZYXvlJsBwDWNu6d6VNBTzkrcuFC5wpGY8VWxLte56gADrqIK57Qxx+R4ii1/mMhPXd6ZIGmnEm3dfrkDk0xdPMpRibFcq5gAQBe3qv2n4SHOpBIPEGx9EqnbSEIQCEIQCW7iKRbd9QP2aH1Yhb+y8qKXXgFvsK3/1XP1WZ/uy0RVWCYUzImSbyRafIlRsmLftqKvqW/wB6SHlVw3ObLxFhcoUcfwuoY/VYxs5GqVsJWb6VY+xEHwkw3kwnPYTE0hxejUUecUbL7bR7DyrLZ5GnymoR1KePDisqeWtyPfP80+9JjydnT4f+3ws3FPSfV6dFraXZVa1+q54azj8mo9WHof8ATX8I04lXVa7Llyc4hYEXLE5FFmsAttTYg9RuLx56hMssdSKzL2cMQKVNWc0KNlBY2ppewF9PVGHd7eqnindUw6UygBN0TUEkWup7REe/GzMViGorh8wXpZyHKKAbeUFNzp3GRNt0sWt8lRA9jcBnQnUkajQ2vKySzrWure02c+ULACqcPSp2XMah1vYEsrH2kxjPJxWyFhWp3texDD29XqjrvHVqh8O7I35u+Y2uBfLxI8I/7N2wtSk5U3vf2afCRjncZqN8uGZ4y37aVTX3axiHKaDnS4KjMCO0FbiNleg6MVdSrDirAgj0GW7T2oyoQdGRvV1j3yH7+MKgpVBx1W/aDqPcfXNcOXzXTm5PD+XG2VDIQhNnM6wnfA4J67hKa5mPAcNO0mOrboY0EjmC1vouje5oDHNqPlL5w94jrU3Yxy3Jw1XTXRCfdEg2bXRlzUai9IeUjjr7xAUn9IPMPvigmJ2UioLgjoHiO+bVKg7ZITYqpEVDjOtduM5UID9h9UynhBcOtNWZR0rEjxt1TlhnsJ0NWSFaYVsnOgEqTbMx1HWBbq49kZ9psxZbX0OluIPdA48JdVzEXva5yX7QP/UR1cazd3h+MgSKrjGfKXYsQABmtew7bACR7aS2qN36+sa+28xh8SwNiSQe09c0xdTM1+4CBwhCOWxMItWqoe+QFS9jYlSypYd92EhMm7o3QlpYbdzZ75gtItlOU9N+Pcbxs2/uQgR6mFLXQFmoscxKjUlH0vYa5SLzOcuNunTn4Plxx82txX8vXYFPNsdF7cLVHrWpKKnoLdGnfZ2GXtoEfWDfjNo5KpVZkmaUjdV8JsZItTc/a5wGxvlAQOefIylsoOepkvex4SycBW5xEdhbMLkcbd0ql6eXd2l31Ub62IJlqbOFqaeHxMQeV9p4bma1Wl9Co6fVYr8JLNyN6qWz1YurMTcWXTiVN7/w+2NnKDhxT2ljFHXVZ/8AqWf70jkzyxl6Vpx8lx3r3mlvnlWw/wCwf1r+Edt3t8fyizph6HSVc5z1Mote2llOusomTfky3ko4DEPz9wlRQucAnKVNxcDXKbnh3TPLjmujTHklvWRbGD2y6Plq0MqHQurF8pHC4yjTjwv1aR0fDU6lmUA9dwQR6xO1IU6yK9NldGF1ZCCpB6wRG3E7NZWzIzI1/KXr8Rwb0zG7k06Z5b6ejltDZubqEZX2KEJKi1+NtL+Mkq411vnUHvXQ+o6e2dEr06luon5rCx/9yOi38ohjbFBYtre1rH1X8Y3Y7dtKqqjhiq+TY2I4+vjLFbCLET4QExOnZFu5qqzbcGh9Kr61/wDGEsn5EIS/my+7LyY/ZSO59TLVGumbX6rRWcGz1SGR1BZukUbvIOo1mmJIRqYRVSxt0FAJ8nUsNWPiZNle0644aiR2fk8moV/hI9xm61q6+TiXHhUce5pK+ePafWZhql+OvjrCUY/KeMH/ABLnznZvtAzk+1MSfKdG86nQb7SSR1KaHiiHxRD7xOLYakf7NPQij3CBG2xznyqGGfvNCmD/ACZZybE0/nYTD/wisp/lqSSvs/DnjTX0Fx7mnBtkYc/MI8Hf4tAYvlWH68KB5tWqv2s05PUwr6NSqp5tdT7GpfGPdTYtA8C48HX4qYlfd+mTcPU9JQ/dEG0Xx+HFKo6A3AOhPGxFxfvsZxo0nqMFRWdjwVQWJ9AjrvHgclRWBLc5wFtQRlFu/iJau7+xaWAohRlDWvVqGwLHrux4KOAHxluPjuVY83POLGXvb2iqBupjrXGGq/UPu4xGmyMQ2bLSc5WKtZToy8VPeJeYrGoA1J0IvqbZwR2DKwsfXIDtJrVqwH7R/ttL8nFMZLKz8P4jLktmU1pDPyFiv2FT6pjlsXZ1aizNUpuikIAzKQL87SIF++xjuXgh1Exs6O3C/wAokOJxnOlqdIgMr9K5IzBSC4OXVQbgX69Yq2dtAc4KZN3VgCdNTYEkLxy62vwM4Y7D5hZCEOZWJI0bKb2btHdFWDQLbUE6XawBOvunB5o9HeLPff8A9/z7a/ao9q0glesoFgtR1A7AGIAl+7nC2CwQ/wAKn7QD8ZQ23v1nEfvqn22l/brDLhMGOyhS+ws78Hm8/VVElMhK/RJX1G0w0U7STLXrr2Vag9TsIlfgZZVaW1Uy7v4bv+Tn1uDLLwH6NPCV7vPTybBwy9gw3vWWHgP0aeaIHnzlYpZdqYn+8KTeulTv7QZDZO+WRbbSfvp0z/Lb4SCStSIQhIEm3S3xxGzm6Bz0yenSYnK394H5rd49IMu/dje7DbSU82crgdOm9gy9/wDeXvHptPNcVYDG1KDrVpOUdTdWU2IP4dRB0Ilcsdr452PUj4VWid8EOyRXcff2lj15urlp4hQLi4CVONylze+mq+q/VNBUmFmuldGOVvWUlpoyaG7L7V8O7umz0he4nZqg64XErpfdJMndCK8sJOldvPOP8tPOPwkwzyH7R8tPOMk/OTscRRzkwakTF5qXgKC8aKm1Xys6hMoUuqs5zsgNs+UDQGLTUjE1JPk2awzCiVDddtdICqtvAEqsjr0Q2XOG18StvjHjnJCdpqhauxchw/RW2jA2ub/1wkoFXQeEBUzzUvEhqzBqwO9PJzwqMAebp1CoPU7AKrejUjw7pI97c9RMiAkZrsBxNr2067GxtIajZkxL9i5F9A/EmWJja6JfyWqZWZELAM5F7ADjx6508Mlxsrh8VbjljZN9zTunhcQpLOCiZcoDaFiSLHLxAAB1PbI9tT9NW/eP9oya7L2izonPqtKoxIVCbFgLdJVJvb8JCtqP+frDq5xz1fSPXK8kkxkhwZZZctuU9vYgfEqvFgO8mw6+v0GdUaM+Lw5KqoXMRlBFwASAy3vfwi9DYKOwAe6c17PoYeqHLb+LYuFBso9RbTifDheOmw67uLkWXohe8jjbu4ThWpA1FGQsDe7aWWwuLjrvHNWtYDunB57MJjY9P/18Mue8uOV6dLNdN6VzvVh8uIqsODVH9YdgZfeyky4fDr2UqY9SLKa3poZqbv1rWqj/ALr/AAMu2mmVEXsUD1ACfQw7PMcnqvyonb6ZcVih2Yit/mNGyqeifAx63tS2OxY/x3P1jm+MZKw6LeBllV0b9pl2NRXsOGHtWTrB+Qnmj3SG8pCW2Ug7Hw4/mUSaYUdBPNHugULyz/7xP7mn96QGT/lo/wB4/wDJp/ekAlb3SJNuTTdNNo13NbNzNJQXymxZ2uEW9uGhJ83vkJnoPkv2Z8n2dTa1nrMazanUE5UF+zIqn0mIHHD7o7OpgqmGRuPl56ncbZyR6os2bsrDIpC4aghDMDlpIOu66hfolZ2XNf61ukejrrr1yJPv7QpYiupV3p3XK6ZTmdVCucpI6OgsR2dhEv00hNxRT6CfUX8J0DDhYeoSEDlJwWt1rDxRde4Wf3zniOUnDZGNOnVL2OXOEVc3VdsxsPRISk+JwFDFIOfpI6gsUuOALWUqRqLjLOBwlLAYetUoJUZUUuaXOO/RXV8gcmxtc2BsbTXd3aKYjD03Q3ARUdb3KuqhShXx6+sEHrjojXYfR4WvpbrBHA3jLHG7+xjlZdobR5T9nFQS9RT1qabEjuOUkeqEp3enZZwuLxFC2iVGC+YdU/lIhMfpxr9XIvx7XZO5iJIS8Y69MMCewn131PsjnmmrF2LzQ1JyLzmXgdXxAFrm1+HfbjG+tSurItQBTcZSuYrnubAgiw48ZviWY2K9XV1HxPH+uBiY85c6i2tuF9NFv6CTA4V8AjuXL6N0soGpA0Ot+GnZHJsQDwI9HfwiCoGHAki506PDq4jhxvOQdgTe3dbxPH0WkBea8w1friDnJpiH6DeHvkh2oaYZB11GLH0yw8ds5Gc4gLmqopyAk5cwvkuB3mVylXMidigS0w3vPvnV4eSy7fP8blcbLP8ATVgNmtWyV8UgFVD0bHSym6lgDa9ydJEdsC9auP8AEfhx8oybjADn+fzvfLlyX6HAC9u3SQXazfn637x/tGRz46xnz+Twl82d6+3b2hE1MdreuCC3rvrMM80zzlfRxuqmhacK+JVBmY2A1J7hxkPG9jki6gC4uQTe3XaYqc5WapnN1RgABwa9yD36AeucE8Pnb16PS8n/ACnBjhfLu340dKLjE03H06ma3Zzjn/yl0tKLwFQU3ptwCup7rAgy8ka4Bn0ZNPNW7u1Kb6i2Pxfng+tEMj1QXUjtFpJd+0/2hivOpn10aZjFSpkug7XQetgIQu/lOX/ZxH+JQ+2sl9AdFfNHuiTbOyaeLpczVzZCyt0TY3Rgy6+Ii5RaBQPLT/vH/k0/vSAS0OV3ACpjybkHmaY7vnSsailSQeINj6JWxLAF9BPU+DoCjSp0l0FNEQDuRQvwnmDZ7AVaZPAOpPhmF56exNYAEk2A1J7pMRUL5Rdv8wi0EPTqauRxFMafzHTwDSsTUuPhrxinefa7VXqYjrqOVp3HBFAtoewFfSxkb+X1fpn2RaHV73nVH0F9O/8Ar+tIyfLan0z7JkY6oPnn2Rs0mm628HySuCT+aey1ey3zX7ip18Ly46L6iec9m4pncIxuGNhfqJ0XXsvp6Zcu5G0zVw6Kx6dM821+Nl8gn+Gw8QYlDjtfdCliqrVmAu2W/wDCoX4TMfg8JOhRVWlkt0Q19bNwN+o2INvTN6rXOawAPzRew8Lkm3phCQNC00YwhA5M05M8IQOLtEztMQkDW8HW4I7RCEDajijlK27jLA3X3iWuopsSKoHS0NmHHMD1HtHbCE24MrMujn8ThLh1SPPK32wx5+t57/aMzCb+K7Ry+C9d+DczGYLGYhON9JHpJtmYpeZAv0rnNoeqwXXwAhCJ3Kw7SxN2N+KTBKGIutTRVYAsr9l7aq3ot39UISRCN+Npq2PxDILrdBe7LcrTpqdP4TGbD7QIdGZeiHVj0idFYE6eiEIHpGtvBhUVS1SwIBHRc6EdyxC+++AU/pie4U6nxWEJIrvfbH0cViTWp3I5tFBYEare+nplZ7UAFRrd1/G0ISMiEctraO+yYjZ5sSKzqKTLZhZiLVGDWtYrmI16xCErEq22xWu4QcKahB3kElz6XLHwtG6EJAIQhAJYm6O3RTr5nNlroC2hNqqXzGwvoSHPpEISYiu21OU2sKrigq80DZS1wTYAEkdVzc+mEIRtL//Z'
     st.image(image=image,
@@ -148,87 +151,7 @@ if selected == "Contexte":
     data_Others = df.groupby(by=['Year'])['Other_Sales'].sum()
     data_Others = data_Others.reset_index()
     data_globales = df.groupby(by=['Year']).sum()
-    data_globales = data_globales.reset_index()
-    p1 = figure(plot_width = 600, plot_height = 400,x_axis_label='Year', y_axis_label='Sales',y_range=[0,600]) 
-    p2 = figure(plot_width = 600, plot_height = 400,x_axis_label='Year', y_axis_label='Sales',y_range=[0,600]) 
-    p3 = figure(plot_width = 600, plot_height = 400,x_axis_label='Year', y_axis_label='Sales',y_range=[0,600]) 
-    p4 = figure(plot_width = 600, plot_height = 400,x_axis_label='Year', y_axis_label='Sales',y_range=[0,600]) 
-    p5 = figure(plot_width = 600, plot_height = 400,x_axis_label='Year', y_axis_label='Sales',y_range=[0,600]) 
-    source1 = ColumnDataSource(data_NA)
-    source2 = ColumnDataSource(data_EU)
-    source3 = ColumnDataSource(data_JP)
-    source4 = ColumnDataSource(data_Others)
-    source5= ColumnDataSource(data_globales)
-    p1.line(x = "Year",
-        y = "NA_Sales",
-        line_width = 3,
-        color = "darkviolet",
-        source = source1)
-    p5.line(x = "Year",
-        y = "NA_Sales",
-        line_width = 3,
-        color = "darkviolet",
-        source = source1,
-       legend_label="NA_Sales")
-    p2.line(x = "Year",
-        y = "EU_Sales",
-        line_width = 3,
-        color = "royalblue",
-        source = source2)
-    p5.line(x = "Year",
-        y = "EU_Sales",
-        line_width = 3,
-        color = "royalblue",
-        source = source2,
-       legend_label="EU_Sales")
-    p3.line(x = "Year",
-       y = "JP_Sales",
-       line_width = 3,
-       color = "hotpink",
-       source = source3)
-    p5.line(x = "Year",
-       y = "JP_Sales",
-       line_width = 3,
-       color = "hotpink",
-       source = source3,
-       legend_label="JP_Sales")
-    p4.line(x = "Year",
-       y = "Other_Sales",
-       line_width = 3,
-       color = "aqua",
-       source = source4)
-    p5.line(x = "Year",
-       y = "Other_Sales",
-       line_width = 3,
-       color = "aqua",
-       source = source4,
-       legend_label="Other_Sales")
-    p5.line(x = "Year",
-       y='Global_Sales',
-       line_width = 3,
-       color = "gray",
-       source = source5,
-       legend_label="Global_Sales")
-    labels = LabelSet(x='weight', y='height', text='names',
-              x_offset=5, y_offset=5, render_mode='canvas')
-    p5.add_layout(labels)
-    tab1 = Panel(child = p1,
-            title = "NA_Sales")
-    tab2 = Panel(child = p2,
-            title = "EU_Sales")
-    tab3 = Panel(child = p3,
-            title = "JP_Sales")
-    tab4 = Panel(child = p4,
-            title = "Others_Sales")
-    tab5 = Panel(child = p5,
-            title = "Globales")
-    tabs = Tabs(tabs = [tab1, tab2, tab3, tab4, tab5])
-    doc = curdoc()
-    doc.theme = 'dark_minimal'
-    doc.add_root(tabs)
-    st.bokeh_chart(tabs, use_container_width=True)
-    st.markdown(
-        """Le marché du jeu vidéo a commencé sa croissance à partir de la seconde moitié des années 90 dynamisé par le lancement de nouvelles plateformes: \n\n Sortie de la PlayStation en 1995 \n\n Nouvel élan dans les années 2000 avec la sortie de la Nintendo 64. \n\nAprès une forte croissance (2005 à 2010), le marché revient à sa tendance initiale. """)   
+    
 if selected == "Méthodologie":
     tab1, tab2, statistiques = st.tabs(["Extraction des données", "Data processing",'Statistiques'])
     with tab1:
