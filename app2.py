@@ -6,7 +6,6 @@ import plotly.express as px
 from bokeh.layouts import row
 from bokeh.models import Range1d, LabelSet
 from bokeh.plotting import figure, output_notebook, show, curdoc
-from bokeh.models.widgets import Panel
 from bokeh.models.widgets import Tabs
 from bokeh.models import ColumnDataSource
 from bokeh.models.tools import HoverTool
@@ -14,7 +13,7 @@ from bokeh.models import BoxAnnotation
 from bokeh.layouts import row
 from bokeh.models import Range1d, LabelSet
 from bokeh.plotting import figure, output_notebook, show,curdoc
-from bokeh.models.widgets import TabPanel
+from bokeh.models.widgets import Tab
 from bokeh.models import ColumnDataSource
 from bokeh.models.tools import HoverTool
 from bokeh.palettes import inferno
